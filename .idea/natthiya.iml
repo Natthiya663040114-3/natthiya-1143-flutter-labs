@@ -9,6 +9,9 @@
       <excludeFolder url="file://$MODULE_DIR$/natthiya_first_app/.dart_tool/widget_preview_scaffold/build" />
       <excludeFolder url="file://$MODULE_DIR$/natthiya_first_app/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/natthiya_first_app/build" />
+      <excludeFolder url="file://$MODULE_DIR$/natthiya_wifgets_exercise/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/natthiya_wifgets_exercise/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/natthiya_wifgets_exercise/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
