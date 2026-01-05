@@ -1,15 +1,10 @@
-// Inside your Flutter project <your-name>_widgets_exercises, create file main_quote_card.dart
-// Create a StatelessWidget class named QuoteCard
-// Display an image of your favorite quote (loaded from assets/images folder)
-// Add the image to assets/images/ and update pubspec.yaml accordingly
-// The image should have a maximum height of 500 pixels while maintaining aspect ratio
-// Display the author's first name and last name as separate Text widgets
-// Use Expanded widget to make the image and name take the full space vertically
-// Arrange First name on the LEFT, last name on the RIGHT 
-// Add spacing between First name and last name using SizedBox
-// Text color must be your favorite color (NOT black)
-// Add space around the entire content
-// Remove the Debug banner
+/* This widget creates the Quote Card screen. I removed the debug banner 
+      and used a Scaffold with a deep purple AppBar. The body uses a Column 
+      wrapped in Padding to organize the layout. I used Expanded widgets to 
+      allocate space for both the image (constrained to 500px height) and 
+      the name section. The name is displayed in a Row to separate the first 
+      and last name, styled with a purple color.
+*/
 
 
 import 'package:flutter/material.dart';

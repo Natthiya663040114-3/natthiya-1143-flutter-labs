@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Flutter: 1143_main_custom_font",
+      "type": "dart",
+      "request": "launch",
+      "program": "lib/1143_main_custom_font.dart",
+      "flutterMode": "debug"
+    }
+  ]
+}

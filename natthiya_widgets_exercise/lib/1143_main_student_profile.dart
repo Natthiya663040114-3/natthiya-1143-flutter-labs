@@ -1,3 +1,9 @@
+
+/* This code creates my student profile page. I defined variables for my name 
+      and ID, then set up the app theme with a pink AppBar. In the body, I used 
+      a Center widget and a Column to stack my name and ID in the middle of the 
+      screen with a big, bold font style.
+*/
 import 'package:flutter/material.dart';
 
 void main() {
