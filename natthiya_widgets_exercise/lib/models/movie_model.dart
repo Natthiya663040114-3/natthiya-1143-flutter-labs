@@ -13,4 +13,3 @@ class Movie {
     required this.rating,
   });
 }
-
