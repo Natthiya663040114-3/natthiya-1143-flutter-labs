@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'models/contact_model.dart';
+import   'models/contact_model.dart';
 
 void main() {
   runApp(ContactListScreen());
