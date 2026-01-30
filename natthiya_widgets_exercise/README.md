@@ -1,4 +1,4 @@
-# natthiya_wifgets_exercise
+# natthiya_widgets_exercise
 
 A new Flutter project.
 
