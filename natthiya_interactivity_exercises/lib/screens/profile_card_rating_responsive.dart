@@ -12,7 +12,7 @@ class ProfileCardRatingResponsive extends StatelessWidget {
     final orientation = MediaQuery.of(context).orientation;
 
     return Scaffold(
-      backgroundColor: Colors.cyanAccent,
+      backgroundColor: Colors.deepPurple[50],
       body: SafeArea(
         child: Container(
           padding: const EdgeInsets.all(20),
@@ -41,7 +41,7 @@ class ProfileCardRatingResponsive extends StatelessWidget {
           email: "maryann_soyao@yahoo.com",
         ),
         InteractiveRatings(
-          activeColor: Theme.of(context).colorScheme.primary,
+          activeColor: Colors.deepPurple[900]!,
           inactiveColor: Theme.of(context).colorScheme.outlineVariant,
         ),
       ],
@@ -77,7 +77,7 @@ class ProfileCardRatingResponsive extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               InteractiveRatings(
-                activeColor: Theme.of(context).colorScheme.primary,
+                activeColor: Colors.deepPurple[900]!,
                 inactiveColor: Theme.of(context).colorScheme.outlineVariant,
               ),
             ],
