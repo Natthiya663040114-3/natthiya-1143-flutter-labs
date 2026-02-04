@@ -63,7 +63,7 @@ class NewsFeedScreen extends StatelessWidget {
     return GridView.builder(
       itemCount: articles.length,
       padding: const EdgeInsets.all(16),
-      // Disable scrolling if we want it to fit exactly on screen
+      // Disable scrolling to fit exactly on screen
       physics: const NeverScrollableScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: columnCount,
@@ -82,34 +82,36 @@ class NewsFeedScreen extends StatelessWidget {
     return Card(
       elevation: 2, // Slight elevation for depth
       child: Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: const EdgeInsets.all(10.0), // Reduced padding
         child: Column(
-          // Using MainAxisSize.max so Spacer() can push footer to bottom
-          mainAxisSize: MainAxisSize.max,
+          // Using MainAxisSize.min to avoid unbounded height error in ListView
+          mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Title: Primary color, Large Title style
+            // Title: Primary color, Title Medium style (smaller)
             Text(
               article.title,
-              style: Theme.of(context).textTheme.titleLarge?.copyWith(
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     color: Theme.of(context).colorScheme.primary,
+                    fontWeight: FontWeight.bold,
                   ),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
             ),
             const SizedBox(height: 4),
             
-            // Description: OnSurface color, Body Medium style
-            // Using Expanded to make it fill available space in GridView if needed
-            // But for this simple card with MainAxisSize.min, standard Text is fine unless valid overflow handling is added
+            // Description: OnSurface color, Body Small style (smaller)
             Text(
               article.description,
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
                     color: Theme.of(context).colorScheme.onSurface,
                   ),
-              maxLines: 2,
+              maxLines: 3, // Allow 3 lines now that text is smaller
               overflow: TextOverflow.ellipsis,
             ),
             
-            const Spacer(),
+            
+            const SizedBox(height: 8),
             
             // Footer Row: Date and Reading Time
             Row(
@@ -120,12 +122,13 @@ class NewsFeedScreen extends StatelessWidget {
                   article.date,
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
                         color: Theme.of(context).colorScheme.onSurfaceVariant,
+                        fontSize: 10,
                       ),
                 ),
-                // Reading Time: OnSurfaceVariant, Label Medium
+                // Reading Time: OnSurfaceVariant, Label Small
                 Text(
                   '${article.readingTimeMinutes} min read',
-                  style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
                         color: Theme.of(context).colorScheme.onSurfaceVariant,
                       ),
                 ),
@@ -137,3 +140,4 @@ class NewsFeedScreen extends StatelessWidget {
     );
   }
 }
+

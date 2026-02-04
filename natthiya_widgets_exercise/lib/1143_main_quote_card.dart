@@ -29,9 +29,7 @@ class QuoteCard extends StatelessWidget {
         body: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
-
             children: [
-
               Expanded(
                 child: Center(
                   child: ConstrainedBox(
@@ -43,7 +41,6 @@ class QuoteCard extends StatelessWidget {
                   ),
                 ),
               ),
-
 
               const SizedBox(height: 20), //Space
 

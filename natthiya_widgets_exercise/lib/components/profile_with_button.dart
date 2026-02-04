@@ -5,96 +5,107 @@ class ProfileWithButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              // Header Information
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Kanda',
-                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                          color: Theme.of(context).colorScheme.primary,
-                        ),
-                  ),
-                  Text(
-                    '642-28-5829',
-                    style: Theme.of(context).textTheme.bodyLarge,
-                  ),
-                ],
-              ),
-              const SizedBox(height: 20),
+    return SingleChildScrollView(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          // Header Information
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
-              // Profile Image
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.2),
-                      blurRadius: 10,
-                      offset: const Offset(0, 5),
-                    ),
-                  ],
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(16),
-                  child: Image.asset(
-                    'assets/images/Ann.jpg',
-                    width: 200,
-                    height: 200,
-                    fit: BoxFit.cover,
-                    errorBuilder: (context, error, stackTrace) {
-                      return const SizedBox(
-                          width: 200,
-                          height: 200,
-                          child: Center(
-                              child: Icon(Icons.person,
-                                  size: 100, color: Colors.grey)));
-                    },
+              children: [
+                Text(
+                  'Taylor Swift',
+                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.primary, // Keep original color
                   ),
                 ),
-              ),
-              const SizedBox(height: 10),
-
-              // Photo Credit Information
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Photo Credit: KKU Library',
-                    style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                          fontStyle: FontStyle.italic,
-                        ),
+                Text(
+                  '663040114-3',
+                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                     fontWeight: FontWeight.bold,
                   ),
-                ],
-              ),
-              const SizedBox(height: 40),
-
-              // Submit Button
-              ElevatedButton(
-                onPressed: () {
-                  _showConfirmationDialog(context);
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Theme.of(context).colorScheme.primaryContainer,
-                  foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
                 ),
-                child: const Text('Submit'),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
+          const SizedBox(height: 150),
+
+          // Profile Image
+          Container(
+             width: double.infinity,
+             height: 300, 
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(0),
+            ),
+            child: Image.asset(
+              'assets/images/taylor.jpg',
+              fit: BoxFit.cover,
+              errorBuilder: (context, error, stackTrace) {
+                return const SizedBox(
+                  height: 300,
+                  child: Center(
+                    child: Icon(
+                      Icons.person,
+                      size: 100,
+                      color: Colors.grey,
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+          const SizedBox(height: 60),
+
+          // Photo Credit Information
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            child: Column(
+              children: [
+                Text(
+                  'Photo Credit: KKU Library',
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 25
+                  ),
+                ),
+                const SizedBox(height: 30),
+
+                // Submit Button
+                ElevatedButton(
+                  onPressed: () {
+                    _showConfirmationDialog(context);
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Theme.of(
+                      context,
+                    ).colorScheme.primaryContainer,
+                    foregroundColor: Theme.of(
+                      context,
+                    ).colorScheme.onPrimaryContainer,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 50,
+                      vertical: 12,
+                    ),
+                    textStyle: const TextStyle(
+                      fontSize: 30,),
+
+                  ),
+                  child: const Text('Submit'),
+                ),
+                const SizedBox(height: 40),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
+
 
   void _showConfirmationDialog(BuildContext context) {
     showDialog(
@@ -102,7 +113,9 @@ class ProfileWithButton extends StatelessWidget {
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text('Confirmation'),
-          content: const Text('Submitting Information'), // Exact text from screenshot
+          content: const Text(
+            'Submitting Information',
+          ), // Exact text from screenshot
           actions: [
             TextButton(
               onPressed: () {
