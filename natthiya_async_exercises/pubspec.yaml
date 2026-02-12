@@ -1,0 +1,10 @@
+name: natthiya_async_exercises
+description: A simple command-line application for async exercises.
+version: 1.0.0
+publish_to: 'none'
+
+environment:
+  sdk: ^3.0.0
+
+dependencies:
+  http: ^1.6.0
