@@ -152,6 +152,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.17.0"
+  natthiya_wifgets_exercise:
+    dependency: "direct main"
+    description:
+      path: "../natthiya_widgets_exercise"
+      relative: true
+    source: path
+    version: "1.0.0+1"
   path:
     dependency: transitive
     description:
