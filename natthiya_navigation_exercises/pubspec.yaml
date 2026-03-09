@@ -1,0 +1,25 @@
+name: natthiya_navigation_exercises
+description: "Lab 10: Navigation and Routing - Quiz App with Navigation"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  natthiya_interactivity_exercises:
+    path: ../natthiya_interactivity_exercises
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
